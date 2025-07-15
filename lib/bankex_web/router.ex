@@ -8,7 +8,7 @@ defmodule BankexWeb.Router do
   scope "/api", BankexWeb do
     pipe_through :api
 
-    get "/", WelcomeController, :index
+    resources "/users", UsersController, only: [:create, :update, :delete, :show]
   end
 
   # Enable LiveDashboard in development
